@@ -318,14 +318,14 @@ export class EventStore
 
     const eventType = event.eventType || rawData.content.eventType;
     if (this.eventHandlers && this.eventHandlers[eventType]) {
-      this.subject$.next(this.eventHandlers[event.eventType](...data));
+      this.subject$.next(this.eventHandlers[event.eventType](...data, event.eventNumber.toInt()));
       if (
         this.store &&
         _subscription.constructor.name === 'EventStoreStreamCatchUpSubscription'
       ) {
         await this.store.write(
           this.store.storeKey,
-          payload.event.eventNumber.toInt()
+          event.eventNumber.toInt()
         );
       }
     } else {
