@@ -318,7 +318,7 @@ export class EventStore
 
     const eventType = event.eventType || rawData.content.eventType;
     if (this.eventHandlers && this.eventHandlers[eventType]) {
-      this.subject$.next(this.eventHandlers[event.eventType](...data, event.eventNumber.toInt()));
+      this.subject$.next(this.eventHandlers[event.eventType](rawData));
       if (
         this.store &&
         _subscription.constructor.name === 'EventStoreStreamCatchUpSubscription'
