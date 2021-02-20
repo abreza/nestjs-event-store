@@ -1,6 +1,6 @@
 {
   "name": "@abreza/nestjs-event-store",
-  "version": "3.1.17",
+  "version": "3.1.17.1",
   "description": "NestJS CQRS module for EventStore.org CQRS",
   "author": {
     "name": "Rex Isaac Raphael",
