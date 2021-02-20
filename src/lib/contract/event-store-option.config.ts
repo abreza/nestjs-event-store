@@ -40,17 +40,17 @@ export interface NatsEventStorePersistentSubscription {
   durableName: string;
   maxInflight?: number;
   startAt?: number;
-  ackWait?: number,
-  manualAcks?: boolean
+  ackWait?: number;
+  manualAcks?: boolean;
 }
 
 export interface NatsEventStoreVolatileSubscription {
   type: EventStoreSubscriptionType.Volatile;
   stream: string;
-  startAt?: number,
-  maxInflight?: number,
-  ackWait?: number,
-  manualAcks?: boolean
+  startAt?: number;
+  maxInflight?: number;
+  ackWait?: number;
+  manualAcks?: boolean;
 }
 
 export type EventStoreSubscription =
@@ -63,7 +63,7 @@ export type NatsEventStoreSubscription =
   | NatsEventStoreVolatileSubscription;
 
 export interface IEventConstructors {
-  [key: string]: (...args: any[]) => IEvent;
+  [key: string]: (rawData: any) => IEvent;
 }
 
 export interface ExtendedCatchUpSubscription

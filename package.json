@@ -1,16 +1,15 @@
 {
   "name": "@abreza/nestjs-event-store",
-  "version": "3.1.17.1",
+  "version": "3.1.18",
   "description": "NestJS CQRS module for EventStore.org CQRS",
-  "author": {
-    "name": "Rex Isaac Raphael",
-    "email": "rex.rahael@outlook.com",
-    "url": "https://xraph.com"
-  },
+  "author": "Rex Isaac Raphael <rex.rahael@outlook.com> (https://xraph.com)",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
-  "repository": "https://github.com/abreza/nestjs-event-store",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abreza/nestjs-event-store.git"
+  },
   "license": "MIT",
   "keywords": [],
   "scripts": {
@@ -127,5 +126,9 @@
     "exclude": [
       "**/*.spec.js"
     ]
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/abreza/nestjs-event-store/issues"
+  },
+  "homepage": "https://github.com/abreza/nestjs-event-store#readme"
 }
