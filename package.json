@@ -57,15 +57,10 @@
     "@nestjs/core": "^7.4.2",
     "@nestjs/cqrs": "^7.0.0",
     "axios": "^0.19.2",
-    "node-eventstore-client": "^0.2.18",
-    "node-nats-streaming": "^0.3.2",
     "protobufjs": "^6.10.1",
     "uuid": "^8.3.0"
   },
-  "peerDependencies": {
-    "node-eventstore-client": "^0.2.16",
-    "node-nats-streaming": "^0.3.2"
-  },
+  "peerDependencies": {},
   "devDependencies": {
     "@bitjson/npm-scripts-info": "^1.0.0",
     "@bitjson/typedoc": "^0.15.0-0",
