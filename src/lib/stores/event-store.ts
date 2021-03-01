@@ -132,13 +132,9 @@ export class EventStore
 
     const streamId = stream ? stream : this.featureStream;
 
-    try {
       await this.eventStore
         .getClient()
         .appendToStream(streamId, expectedVersion.any, [eventPayload]);
-    } catch (err) {
-      this.logger.error(err);
-    }
   }
 
   async subscribeToPersistentSubscriptions(
