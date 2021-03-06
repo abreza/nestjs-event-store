@@ -287,7 +287,7 @@ export class NatsEventStore
 
     const eventType = payload.getSubject();
     if (this.eventHandlers && this.eventHandlers[handlerType]) {
-      this.subject$.next(this.eventHandlers[handlerType](...data));
+      this.subject$.next(this.eventHandlers[handlerType](data));
     } else {
       Logger.warn(
         `Event of type ${eventType} not handled`,
