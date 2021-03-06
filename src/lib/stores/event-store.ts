@@ -111,7 +111,9 @@ export class EventStore
         volatileSubscriptions as ESVolatileSubscription[]
       );
     } else {
-      throw new Error('Event store type is not supported for feature - (event-tore.ts)');
+      throw new Error(
+        'Event store type is not supported for feature - (event-tore.ts)'
+      );
     }
   }
 
@@ -136,10 +138,9 @@ export class EventStore
       await this.eventStore
         .getClient()
         .appendToStream(streamId, expectedVersion.any, [eventPayload]);
-      return true;
     } catch (err) {
       this.logger.error(err);
-      return false;
+      throw new Error(err);
     }
   }
 
@@ -325,10 +326,7 @@ export class EventStore
         this.store &&
         _subscription.constructor.name === 'EventStoreStreamCatchUpSubscription'
       ) {
-        await this.store.write(
-          this.store.storeKey,
-          event.eventNumber.toInt()
-        );
+        await this.store.write(this.store.storeKey, event.eventNumber.toInt());
       }
     } else {
       Logger.warn(
